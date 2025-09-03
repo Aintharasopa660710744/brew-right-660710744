@@ -37,7 +37,7 @@ jobs:
           import duckdb, pathlib
           pathlib.Path("out").mkdir(exist_ok=True)
           con = duckdb.connect(database=':memory:')
-          sql = pathlib.Path(".sql/transform.sql").read_text(encoding="utf-8")
+          sql = pathlib.Path(".github/.sql/transform.sql").read_text(encoding="utf-8")
           con.execute(sql)
           con.close()
           PY
